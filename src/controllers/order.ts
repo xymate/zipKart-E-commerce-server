@@ -92,7 +92,7 @@ export const allOrders = TryCatch(async (req, res, next) => {
 });
 
 export const getSingleOrder = TryCatch(async (req, res, next) => {
-  const id = req.params;
+  const {id} = req.params;
 
   let order;
   if (myCache.has(`order-${id}`)) {
@@ -114,7 +114,7 @@ export const getSingleOrder = TryCatch(async (req, res, next) => {
 });
 
 export const processOrder = TryCatch(async (req, res, next) => {
-  const id = req.params;
+  const {id} = req.params;
 
   const order = await Order.findById(id);
 
@@ -151,7 +151,7 @@ export const processOrder = TryCatch(async (req, res, next) => {
 });
 
 export const deleteOrder = TryCatch(async (req, res, next) => {
-  const id = req.params;
+  const {id} = req.params;
 
   const order = await Order.findById(id);
 
