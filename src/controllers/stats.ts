@@ -118,7 +118,7 @@ export const getDashboardStats=TryCatch(async(req,res,next)=>{
             Order.find({}).select("total"),
             lastsixMonthAgoOrdersPromise,
             Product.distinct("category"),
-            User.countDocuments({gender:"feamle"}),
+            User.countDocuments({gender:"female"}),
             latestTransactionPromise,
         ]);
 
